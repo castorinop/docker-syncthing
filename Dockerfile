@@ -14,7 +14,7 @@ RUN adduser -D user
 USER user
 
 ENTRYPOINT ["syncthing"]
-CMD ['-gui-address=0.0.0.0:3834' ]
+CMD ["-gui-address=0.0.0.0:8384"]
 
 EXPOSE 8384
 EXPOSE 22000
