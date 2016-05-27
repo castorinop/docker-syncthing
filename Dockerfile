@@ -1,10 +1,10 @@
 FROM alpine
 
-ENV SYNCTHING_VERSION 0.13.2
+ENV SYNCTHING_VERSION 0.13.4
 ENV ARCH=amd64 
 RUN apk add wget --update && \
 #FIXME check certificate
-wget --no-check-certificate https://github.com/syncthing/syncthing/releases/download/v0.13.2/syncthing-linux-$ARCH-v$SYNCTHING_VERSION.tar.gz -O sycnthing.tar.gz && \
+wget --no-check-certificate https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-$ARCH-v$SYNCTHING_VERSION.tar.gz -O sycnthing.tar.gz && \
 tar zxvf sycnthing.tar.gz && \
 mv syncthing-linux-$ARCH-v$SYNCTHING_VERSION/syncthing /usr/bin/ && \
 rm -rf /tmp/src && \
