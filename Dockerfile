@@ -5,7 +5,8 @@ RUN mkdir -p /home/user/bin
 
 ENV SYNCTHING_VERSION 0.13.4
 ENV ARCH=386 
-RUN apk add wget --update && \
+RUN echo "http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/" > /etc/apk/repositories && \
+apk add wget --update && \
 #FIXME check certificate
 wget --no-check-certificate https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-$ARCH-v$SYNCTHING_VERSION.tar.gz -O sycnthing.tar.gz && \
 tar zxvf sycnthing.tar.gz && \
