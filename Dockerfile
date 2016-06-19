@@ -21,8 +21,10 @@ RUN chmod 755 /usr/bin/*sh
 
 env PATH /home/user/bin:$PATH
 
+ENV APP_BIN=syncthing
+ENV APP_ARGS="-gui-address=0.0.0.0:8384"
+
 ENTRYPOINT ["entrypoint.sh"]
-CMD "syncthing" "-gui-address=0.0.0.0:8384"
 
 EXPOSE 8384
 EXPOSE 22000
