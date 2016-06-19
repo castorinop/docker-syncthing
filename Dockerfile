@@ -1,4 +1,4 @@
-FROM alpine
+FROM multiarch/alpine:x86_64-latest-stable
 
 RUN adduser -D user
 RUN mkdir -p /home/user/bin
