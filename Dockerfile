@@ -15,11 +15,13 @@ rm -rf /var/cache/apk/*
 
 RUN chown user.user /home/user/bin -Rv
 
-USER user
+COPY noarch/*.sh /usr/bin/
+RUN chmod 755 /usr/bin/*sh
 
 env PATH /home/user/bin:$PATH
-ENTRYPOINT ["syncthing"]
-CMD ["-gui-address=0.0.0.0:8384"]
+
+ENTRYPOINT ["entrypoint.sh"]
+CMD "syncthing" "-gui-address=0.0.0.0:8384"
 
 EXPOSE 8384
 EXPOSE 22000
