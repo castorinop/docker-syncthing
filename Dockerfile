@@ -10,6 +10,7 @@ RUN apk add wget --update && \
 wget --no-check-certificate https://github.com/syncthing/syncthing/releases/download/v$SYNCTHING_VERSION/syncthing-linux-$ARCH-v$SYNCTHING_VERSION.tar.gz -O sycnthing.tar.gz && \
 tar zxvf sycnthing.tar.gz && \
 mv syncthing-linux-$ARCH-v$SYNCTHING_VERSION/syncthing /home/user/bin/ && \
+rm sycnthing.tar.gz && \
 rm -rf /tmp/src && \
 rm -rf /var/cache/apk/*
 
