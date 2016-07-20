@@ -1,9 +1,9 @@
-FROM multiarch/alpine:x86_64-latest-stable
+FROM alpine
 
 RUN adduser -D user
 RUN mkdir -p /home/user/bin
 
-ENV SYNCTHING_VERSION 0.13.4
+ENV SYNCTHING_VERSION 0.14.0
 ENV ARCH=amd64 
 RUN apk add wget --update && \
 #FIXME check certificate
