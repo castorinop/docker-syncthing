@@ -3,7 +3,7 @@ FROM alpine
 RUN adduser -D user
 RUN mkdir -p /home/user/bin
 
-ENV SYNCTHING_VERSION 0.14.0
+ENV SYNCTHING_VERSION 0.14.9
 ENV ARCH=amd64 
 RUN apk add wget --update && \
 #FIXME check certificate
